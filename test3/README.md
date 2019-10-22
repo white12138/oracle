@@ -1,9 +1,9 @@
 PART1
 首先创建自己的账号WHITE，然后以system身份登录:
 ```
-ALTER USER your_user QUOTA UNLIMITED ON USERS;
-ALTER USER your_user QUOTA UNLIMITED ON USERS02;
-ALTER USER your_user QUOTA UNLIMITED ON USERS03;
+ALTER USER WHITE QUOTA UNLIMITED ON USERS;
+ALTER USER WHITE QUOTA UNLIMITED ON USERS02;
+ALTER USER WHITE QUOTA UNLIMITED ON USERS03;
 exit
 ```
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191022111946909.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAwNTEzMg==,size_16,color_FFFFFF,t_70)
@@ -223,12 +223,12 @@ PART3
 ```
 set autotrace on
 
-select * from your_user.orders where order_date
+select * from WHITE.orders where order_date
 between to_date('2017-1-1','yyyy-mm-dd') and to_date('2018-6-1','yyyy-mm-dd');
 
 select a.ORDER_ID,a.CUSTOMER_NAME,
 b.product_name,b.product_num,b.product_price
-from your_user.orders a,your_user.order_details b where
+from WHITE.orders a,WHITE.order_details b where
 a.ORDER_ID=b.order_id and
 a.order_date between to_date('2017-1-1','yyyy-mm-dd') and to_date('2018-6-1','yyyy-mm-dd');
 ```
